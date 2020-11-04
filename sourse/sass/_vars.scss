@@ -249,7 +249,7 @@ $negative-spacers: if($enable-negative-margins, negativify-map($spacers), null) 
 //
 // Settings for the `<body>` element.
 
-$body-bg: $white !default;
+$body-bg: #494955 !default;
 $body-color: $gray-900 !default;
 $body-text-align: null !default;
 

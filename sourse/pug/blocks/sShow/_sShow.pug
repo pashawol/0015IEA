@@ -1,0 +1,52 @@
+mixin sShow(data)
+	// start sShow
+	+b.sShow&attributes(attributes)
+		+e.head
+			.container-fluid
+				+b.back(href="#")
+					+icon('arrow-back')
+		+e.inner.bg-wrap
+			+pic('show.png','',0)(class="picture-bgg")
+			+b.canvas-block
+				- for (var x = 0; x < 10; x++)
+					+e.logo-block(href="#")
+						img(src="img/@2x/logo.png", alt="")
+				+e.center-logo
+					img(src="img/svg/logo.svg", alt="")
+
+	// end sShow
+mixin sShow2(data)
+	// start sShow
+	+b.sShow&attributes(attributes)
+		+e.head
+			.container-fluid
+				+b.back(href="#")
+					+icon('arrow-back')
+				img.logo-color(src="img/svg/logo-color.svg", alt="")
+		+e.inner.bg-wrap
+			+pic('show-page.png','',0)(class="picture-bgg")
+			+b.canvas-block--page
+				+e.link--about(href="#") О компании
+				+e.link--contacts(href="#") Контакты
+				+e.block--logo-page 
+					img(src="img/@2x/logo.png", alt="")
+				+e.block--video(href="https://www.youtube.com/watch?v=mbcP3Oc0PjU&list=PLqKQF2ojwm3l4oPjsB9chrJmlhZ-zOzWT&index=13" data-fancybox="video") 
+					img(src="img/@2x/video.jpg", alt="")
+				+e.btns
+					+e.btn(href="#")
+						+e.icon-wrap
+							img(src="img/svg/btn-1.svg", alt="")
+						+e.text Пройти опрос
+					+e.btn(href="#")
+						+e.icon-wrap
+							img(src="img/svg/btn-2.svg", alt="")
+						+e.text Пройти опрос
+					+e.btn(href="#")
+						+e.icon-wrap
+							img(src="img/svg/btn-4.svg", alt="")
+						+e.text Пройти опрос
+					+e.btn(href="#")
+						+e.icon-wrap
+							img(src="img/svg/btn-3.svg", alt="")
+						+e.text Пройти опрос
+	// end sShow
