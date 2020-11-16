@@ -12,9 +12,24 @@
 	}
 	// start .sShow
 	.sShow {
+		&__banner{
+				@include media-breakpoint-up(md) {
+
+					max-width: 84%; 
+				}
+			height: em(80px);
+			// left: 686px;
+			// top: 48px;
+
+			background: #FFFFFF;
+		}
 		&__head{
 			.row{
 				align-items: center;
+					@include media-breakpoint-up(md) {
+
+						@include roww(em(60));
+					}
 			}
 		 
 			// .logo-color{

@@ -46,8 +46,10 @@ mixin sShow2(data)
 					.col-auto
 						+b.back(href="#")
 							+icon('arrow-back')
-					.col-auto
+					.col-auto.d-none.d-sm-block
 						img.logo-color(src="img/svg/logo-color.svg", alt="")
+					.col
+						+e.banner
 		+e.inner.bg-wrap
 			+pic('show-page.png','',0)(class="picture-bgg")
 			+b.canvas-block--page
