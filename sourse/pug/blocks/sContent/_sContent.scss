@@ -8,8 +8,7 @@
 		//  background-image: linear-gradient(180deg,  rgba(255, 255, 255, 0) 100%);
 		position: relative;
 		padding-top: rem(60);
-		&::before{
-			
+		&::before{ 
 			content: '';
 			position: absolute;
 			left: 0;

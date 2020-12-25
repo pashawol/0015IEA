@@ -2,6 +2,19 @@
 mixin modal() 
 	//  start modals
 
+	+b.modal-win--dark.--lg(id="addAnnouncements" class=" " style="display: none" )
+		.h5.strong Новый анонс
+		+form-wrap
+			+input('Введите','text','Заголовок')
+			+input('Введите','textarea','Текст')
+			.row
+				.col-lg-4.col
+					+input('ДД.ММ.ГГГГ','date','Выберите дату отправки')
+				.col-lg-2.col-sm-auto
+					+input('00:00','time','Время отправки')
+				.col-md-auto.col-lg-12.text-end
+					.form-wrap__title.pb-3
+					button.btn.btn-primary.px-5(type="submit") Опубликовать
 	+b.modal-win(id="modal-call" class=" " style="display: none" )
 		+form-wrap
 			.text-center

@@ -1,0 +1,34 @@
+mixin sPeoples(data)
+	// start sPeoples
+	+b.sPeoples.section.pt-0&attributes(attributes)
+			.row.pb-3
+				.col.h6.strong 
+					strong
+						span.text-primary 450 человек 
+						| 
+						| посетило стенд
+				.col-auto
+					+b.btn-search.toggle-search
+						+icon("search")
+				.col-12
+					+b.FORM.search-block--hidden.py-2.me-0
+						+input("Поиск")
+						+e.btn(type="button")
+							+icon("search")
+
+			+e.wrap.custom-scroll
+				- for (var x = 0; x < 10; x++)
+					+e.item
+						.row
+							.col-auto
+								+e.img-wrap
+									+pic("avatar.png",'bg',0)
+							.col
+								.strong.pb-1  Гагаринский Виктор Леонидович
+								.smallest.pb-1 Mail.r Group / Директор по продукту
+								.row
+									.col-sm-auto
+										a.strong.text-white(href="tel:+79856685588") +7 985 668 55 88
+									.col-sm-auto
+										a(href="mailto:sample@sample.com") sample@sample.com
+	// end sPeoples

@@ -21,9 +21,65 @@
 		<!-- Custom Browsers Color-->
 		<meta name="theme-color" content="#3361d8">
 		<link rel="stylesheet" href="libs/@fancyapps/fancybox/jquery.fancybox.min.css"/>
+		<link rel="stylesheet" href="js/dropzone.min.css"/>
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body class="page-show"> 
+		<!-- start top-nav-->
+		<div class="top-nav">
+			<div class="container">
+				<div class="top-nav__row row">
+					<div class="col-auto d-xl-none">
+						<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+						</div>
+					</div>
+					<div class="col-xl-auto col"><a class="top-nav__logo" href="/"><img src="img/svg/logo-top.svg" alt=""/></a>
+					</div>
+					<div class="col-auto"><a class="top-nav__btn" href="#">
+						<svg class="icon icon-search ">
+							<use xlink:href="img/svg/sprite.svg#search"></use>
+						</svg></a>
+					</div>
+					<div class="top-nav__col col-xl order-xl-0 order-last">
+						<div class="nav-wrap">
+							<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#sContact" itemprop="url">Выставка</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Программа</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Участники</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">О проекте</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Контакты</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-auto"> 
+						<div class="row g-3">
+							<div class="col-auto">
+								<button class="btn btn-sm btn-outline-primary">En</button>
+							</div>
+							<div class="col-auto d-none d-md-block">
+								<button class="btn btn-sm px-4 btn-outline-primary">Регистрация</button>
+							</div>
+							<div class="col-auto"><a class="top-nav__btn text-primary" href="#">
+								<svg class="icon icon-user ">
+									<use xlink:href="img/svg/sprite.svg#user"></use>
+								</svg></a>
+							</div>
+							<div class="col-auto"><a class="top-nav__btn text-primary" href="#"><span class="top-nav__count">10</span>
+								<svg class="icon icon-notification ">
+									<use xlink:href="img/svg/sprite.svg#notification"></use>
+								</svg></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end top-nav-->
 		<!-- start sShow-->
 		<div class="sShow">
 			<div class="sShow__head">
@@ -59,9 +115,46 @@
 		</div>
 		<!-- end sShow-->
 		<footer class="footer block-with-lazy">
-			<div class="container-fluid">© 2020. Все права защищены</div>
+			<div class="container">© 2020. Все права защищены</div>
 		</footer>
 		<!--  start modals-->
+		<div class="modal-win modal-win--dark modal-win--lg" id="addAnnouncements" style="display: none">
+			<div class="h5 strong">Новый анонс</div>
+			<div class="form-wrap">
+				<form>
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Заголовок</span><input class="form-wrap__input form-control" type="text" placeholder="Введите" name="text"/>
+						</label>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="form-wrap__input-wrap form-group">
+						<label><span class="form-wrap__title">Текст</span><textarea class="form-wrap__input form-control" placeholder="Введите" name="textarea"></textarea>
+						</label>
+					</div>
+					<!-- +e.input-wrap-->
+					<div class="row">
+						<div class="col-lg-4 col">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Выберите дату отправки</span><input class="form-wrap__input form-control" type="date" placeholder="ДД.ММ.ГГГГ" name="date"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-lg-2 col-sm-auto">
+							<div class="form-wrap__input-wrap form-group">
+								<label><span class="form-wrap__title">Время отправки</span><input class="form-wrap__input form-control" type="time" placeholder="00:00" name="time"/>
+								</label>
+							</div>
+							<!-- +e.input-wrap-->
+						</div>
+						<div class="col-md-auto col-lg-12 text-end">
+							<div class="form-wrap__title pb-3"></div>
+							<button class="btn btn-primary px-5" type="submit">Опубликовать</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
 		<div class="modal-win" id="modal-call" style="display: none">
 			<div class="form-wrap">
 				<form>
@@ -87,6 +180,7 @@
 		<!-- end modals-->
 		<script src="libs/loading-attribute-polyfill/loading-attribute-polyfill.min.js"></script>
 		<script src="libs/jquery/jquery.min.js"></script>
+		<script src="js/dropzone.min.js"></script>
 		<!-- modal libs-->
 		<script src="libs/@fancyapps/fancybox/jquery.fancybox.min.js"></script>
 		<!-- modal libs-->

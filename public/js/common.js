@@ -3,7 +3,7 @@
 var JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobile: document.querySelector(".nav-wrap"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 	modalCall: function modalCall() {
 		$(".link-modal").fancybox({
@@ -83,6 +83,80 @@ var JSCCommon = {
 		}, {
 			passive: true
 		});
+	},
+	// /modalCall
+	toggleMenu: function toggleMenu() {
+		var _this = this;
+
+		if (this.btnToggleMenuMobile) {
+			this.btnToggleMenuMobile.forEach(function (element) {
+				element.addEventListener('click', function () {
+					_this.btnToggleMenuMobile.forEach(function (element) {
+						return element.classList.toggle("on");
+					});
+
+					_this.menuMobile.classList.toggle("active");
+
+					document.body.classList.toggle("fixed");
+					document.querySelector('html').classList.toggle("fixed");
+					return false;
+				});
+			});
+		}
+	},
+	closeMenu: function closeMenu() {
+		if (this.menuMobile) {
+			this.btnToggleMenuMobile.forEach(function (element) {
+				element.classList.remove("on");
+			});
+			this.menuMobile.classList.remove("active");
+			document.body.classList.remove("fixed");
+			document.querySelector('html').classList.remove("fixed");
+		}
+	},
+	mobileMenu: function mobileMenu() {
+		var _this2 = this;
+
+		if (this.menuMobileLink) {
+			this.toggleMenu();
+			document.addEventListener('mouseup', function (event) {
+				var container = event.target.closest(".menu-mobile--js.active"); // (1)
+
+				if (!container) {
+					_this2.closeMenu();
+				}
+			}, {
+				passive: true
+			});
+			window.addEventListener('resize', function () {
+				if (window.matchMedia("(min-width: 992px)").matches) {
+					JSCCommon.closeMenu();
+				}
+			}, {
+				passive: true
+			});
+		}
+	},
+	// /mobileMenu
+	// табы  .
+	tabscostume: function tabscostume(tab) {
+		var tabs = {
+			Btn: [].slice.call(document.querySelectorAll(".".concat(tab, "__btn"))),
+			BtnParent: [].slice.call(document.querySelectorAll(".".concat(tab, "__caption"))),
+			Content: [].slice.call(document.querySelectorAll(".".concat(tab, "__content")))
+		};
+		tabs.Btn.forEach(function (element, index) {
+			element.addEventListener('click', function () {
+				if (!element.classList.contains('active')) {
+					var siblings = element.parentNode.querySelector(".".concat(tab, "__btn.active"));
+					var siblingsContent = tabs.Content[index].parentNode.querySelector(".".concat(tab, "__content.active"));
+					siblings.classList.remove('active');
+					siblingsContent.classList.remove('active');
+					element.classList.add('active');
+					tabs.Content[index].classList.add('active');
+				}
+			});
+		});
 	}
 };
 var $ = jQuery;
@@ -90,6 +164,7 @@ var $ = jQuery;
 function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
+	JSCCommon.mobileMenu();
 	$(".canvas-block__logo-block").hover(function () {
 		var index = $(this).index();
 		$(".hover-block path").eq(index).toggleClass('hover').siblings().removeClass('hover');
@@ -97,6 +172,9 @@ function eventHandler() {
 	$(" .hover-block path").click(function () {
 		var index = $(this).index();
 		window.location.replace($(".canvas-block__logo-block").eq(index).attr('href'));
+	});
+	$(".toggle-search").click(function () {
+		$(".search-block--hidden").toggle();
 	});
 }
 

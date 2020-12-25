@@ -1,0 +1,53 @@
+
+	// start .sPeoples
+	.sAnnouncements,
+	.sStands,
+	.sPeoples {
+		max-width: rem(650);
+		&__wrap{
+			max-height: rem(500);
+			overflow-x: hidden;
+			overflow-y: auto;
+			padding-right: 1rem;
+		}
+		&__item{
+			.row{
+				--bs-gutter-x: 10px;
+			}
+			padding-bottom: rem(20);
+		}
+		&__img-wrap{
+			width: rem(72);
+			height: rem(72); 
+			box-shadow: 3.6531px 4.26195px 5.78408px rgba(0, 0, 0, 0.25);
+			backdrop-filter: blur(6.0885px);
+			/* Note: backdrop-filter has minimal browser support */
+
+			border-radius: 9.13276px;
+			overflow: hidden;
+			
+		}
+	
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sPeoples
+
+	.btn-search {
+		.icon{
+
+			font-size: rem(19);
+		}
+	}
+
+	.search-block--hidden{
+		display: none; 
+	}

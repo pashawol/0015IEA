@@ -1,0 +1,38 @@
+
+	// start .sStands
+	.sStands {
+		&__item{
+			padding-right: 1rem;
+			.row{
+				--bs-gutter-x: 28px;
+			}
+		}
+		&__img-wrap{
+			@include media-breakpoint-up(sm) {
+
+				width: rem(257);
+			}
+			width: 100%;
+				height: rem(160);
+			line-height: rem(160); 
+			text-align: center;
+			vertical-align: middle;
+			background-color: #ffffff;
+			box-shadow: none;
+			border-radius: 0;
+			img{
+				max-width: 90%;
+				max-height: 90%;
+			}
+		}
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sStands

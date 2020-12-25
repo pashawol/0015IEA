@@ -1,0 +1,35 @@
+mixin sAnnouncements(m)
+	// start sAnnouncements
+	+b.sAnnouncements.section.pt-0&attributes(attributes)
+		.row.pb-3
+			if !m
+				.col.h5.strong  Отправленные анонсы
+				.col-auto.order-md-last
+					+b.btn-search.toggle-search
+						+icon("search")
+				.col-md-auto
+					a.strong(href="#addAnnouncements").link-modal + Создать анонс
+			else
+				.col.h5.strong  Анонсы
+				.col-auto.order-md-last
+					+b.btn-search.toggle-search
+						+icon("search") 
+			.col-12.order-last
+				+b.FORM.search-block--hidden.py-2.me-0
+					+input("Поиск")
+					+e.btn(type="button")
+						+icon("search")
+
+		+e.wrap.custom-scroll
+			- for (var x = 0; x < 10; x++)
+				+e.item
+					.h6.strong Название анонса
+					p Этот функционал видится примерно как панель уведомлений на Facebook, когда возле значка есть количество непрочитанных сообщений, а нажимая на него открывается панель с ними. Кликая по уведомлению можно перейти на отдельную страницу такой публикации.
+					.row.align-items-center
+						+e.date.col-md.fw-500 18.08.2021 в 18:00
+						if !m
+							.col-auto
+								a.small.strong(href="#") Редактировать и отправить
+							.col-auto
+								a.small.strong.link-danger(href="#") Удалить
+	// end sAnnouncements

@@ -1,7 +1,7 @@
 const JSCCommon = {
 	// часть вызов скриптов здесь, для использования при AJAX
 	btnToggleMenuMobile: [].slice.call(document.querySelectorAll(".toggle-menu-mobile--js")),
-	menuMobile: document.querySelector(".menu-mobile--js"),
+	menuMobile: document.querySelector(".nav-wrap"),
 	menuMobileLink: [].slice.call(document.querySelectorAll(".menu-mobile--js ul li a")),
 
 	modalCall() {
@@ -62,7 +62,7 @@ const JSCCommon = {
 		}
 		if (linkModal) addData();
 	},
- 
+
 	// /inputMask
 	ifie() {
 		var isIE11 = !!window.MSInputMethodContext && !!document.documentMode;
@@ -71,7 +71,7 @@ const JSCCommon = {
 
 		}
 	},
- 
+
 	heightwindow() {
 		// First we get the viewport height and we multiple it by 1% to get a value for a vh unit
 		let vh = window.innerHeight * 0.01;
@@ -85,13 +85,80 @@ const JSCCommon = {
 			document.documentElement.style.setProperty('--vh', `${vh}px`);
 		}, { passive: true });
 	},
- 
+	// /modalCall
+	toggleMenu() {
+		if (this.btnToggleMenuMobile) {
+			this.btnToggleMenuMobile.forEach(element => {
+				element.addEventListener('click', () => {
+					this.btnToggleMenuMobile.forEach(element => element.classList.toggle("on"));
+					this.menuMobile.classList.toggle("active");
+					document.body.classList.toggle("fixed");
+					document.querySelector('html').classList.toggle("fixed");
+					return false;
+				});
+			});
+		}
+	},
+
+	closeMenu() {
+		if (this.menuMobile) {
+			this.btnToggleMenuMobile.forEach(element => {
+				element.classList.remove("on");
+			});
+			this.menuMobile.classList.remove("active");
+			document.body.classList.remove("fixed");
+			document.querySelector('html').classList.remove("fixed");
+		}
+
+	},
+	mobileMenu() {
+		if (this.menuMobileLink) {
+			this.toggleMenu();
+			document.addEventListener('mouseup', (event) => {
+				let container = event.target.closest(".menu-mobile--js.active"); // (1)
+				if (!container) {
+					this.closeMenu();
+				}
+			}, { passive: true });
+
+			window.addEventListener('resize', () => {
+				if (window.matchMedia("(min-width: 992px)").matches) {
+					JSCCommon.closeMenu();
+				}
+			}, { passive: true });
+		}
+	},
+	// /mobileMenu
+
+	// табы  .
+	tabscostume(tab) {
+
+		let tabs = {
+			Btn: [].slice.call(document.querySelectorAll(`.${tab}__btn`)),
+			BtnParent: [].slice.call(document.querySelectorAll(`.${tab}__caption`)),
+			Content: [].slice.call(document.querySelectorAll(`.${tab}__content`)),
+		}
+		tabs.Btn.forEach((element, index) => {
+			element.addEventListener('click', () => {
+				if (!element.classList.contains('active')) {
+					let siblings = element.parentNode.querySelector(`.${tab}__btn.active`);
+					let siblingsContent = tabs.Content[index].parentNode.querySelector(`.${tab}__content.active`);
+					siblings.classList.remove('active');
+					siblingsContent.classList.remove('active')
+					element.classList.add('active');
+					tabs.Content[index].classList.add('active');
+				}
+			})
+		})
+	},
+
 };
 const $ = jQuery;
 
 function eventHandler() {
 	JSCCommon.ifie();
 	JSCCommon.modalCall();
+	JSCCommon.mobileMenu();
 
 
 
@@ -100,15 +167,18 @@ function eventHandler() {
 		$(".hover-block path").eq(index).toggleClass('hover').siblings().removeClass('hover');
 	})
 
- 
-	
+
+
 	$(" .hover-block path").click(function () {
 		let index = $(this).index();
 		window.location.replace($(".canvas-block__logo-block").eq(index).attr('href'));
 	})
 
- 
-	
+
+	$(".toggle-search").click(function () {
+		$(".search-block--hidden").toggle();
+	})
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

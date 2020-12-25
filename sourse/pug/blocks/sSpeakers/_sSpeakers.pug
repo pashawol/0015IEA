@@ -1,0 +1,64 @@
+mixin sSpeakersCard(i,name,t,btn)
+	+b.sSpeakersCard 
+		+e.img-wrap.bg-wrap
+			if i
+				+pic(`speaker-${i}`,'','')
+		+e.text-wrap
+			+e.title= name
+			+e.text!= t
+			.small.text-light Product designer
+		//- if btn
+		//- 	+e.btn.d-sm-none(href="#") Написать сообщение
+		//- else
+		//- 	+e.btn.link-modal.d-sm-none(href="#modal-content") Открыть биографию
+
+
+mixin sSpeakers()
+	// start sSpeakers
+	+b.sSpeakers.section#sSpeakers&attributes(attributes)
+		.container
+			if block
+				block
+			else
+				//- +e.search
+				//- 	+input('Найти спикера','search')
+				//- 	+e.btnSearch(type='submit')
+				//- 		+icon('search')
+				.row.row--lg
+					.col-sm-6.col-lg-3.col-xl-4
+						+sSpeakersCard('1.png','Алексей Гром','Google inc')
+					.col-sm-6.col-lg-3.col-xl-4
+						+sSpeakersCard('2.png','Олег Белозеров',`Министерство образования и науки Российской Федерации`)
+					.col-sm-6.col-lg-3.col-xl-4
+						+sSpeakersCard('3.png','Сергей Малозёмов','Google inc')
+					.col-sm-6.col-lg-3.col-xl-4
+						+sSpeakersCard('4.png','Люк Надаль','Google inc')
+					.col-sm-6.col-lg-3.col-xl-4
+						+sSpeakersCard('5.png','Алексей Шило','Google inc')
+				
+				//- +pugin()
+	// end sSpeakers
+mixin sSpeakers0()
+	// start sSpeakers
+	+b.sSpeakers--main.mt-0.section#sSpeakers&attributes(attributes)
+		.container
+			.section-title
+				.row
+					.col
+						h2 Спикеры
+					.col-auto
+						.cotrol-wrap
+							+arrow()
+			+e.slider--js.swiper-container
+				.swiper-wrapper
+					- for (var x = 0; x < 2; x++)
+						+e.slide.swiper-slide
+							+sSpeakersCard('1.png','Алексей Гром','Генеральный директор, председатель правления АО «Объединенная транспортно- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.')
+						+e.slide.swiper-slide
+							+sSpeakersCard('2.png','Олег Белозеров',`Генеральный директор&#8209;председатель правления ОАО&nbsp;"РЖД"`)
+						+e.slide.swiper-slide
+							+sSpeakersCard('3.png','Сергей Малозёмов','Автор и ведущий программ, НТВ')
+						+e.slide.swiper-slide
+							+sSpeakersCard('4.png','Люк Надаль','председатель правления, Группа GEFCO')
+			.swiper-pagination
+	// end sSpeakers

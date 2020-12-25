@@ -2,6 +2,7 @@
 	// display: block;
 	width: 100%;
 	position: relative;
+	padding: rem(26);
 
 	.modal-content {
 		// max-width: 485px;
@@ -12,6 +13,17 @@
 		color: $primary;
 		font-size: 40px;
 		font-weight: 100;
+	}
+	&--dark{
+		background: #252C3A;
+		/* 3 */
+
+		box-shadow: 0px 53.6471px 67px -11.6235px rgba(0, 0, 0, 0.21);
+		border-radius: 20px;
+
+	}
+	&--lg{
+		max-width: rem(994);
 	}
 }
 
@@ -125,3 +137,20 @@ a {
 @include media-breakpoint-down(sm) {}
 
 @include media-breakpoint-down(xs) {}
+
+.fancybox-slide--html .fancybox-close-small {
+	background-color: #ffffff;
+	border-radius: 50%;
+	opacity: 1;
+	padding: 1px;
+	width: rem(24);
+	height: rem(24);
+	right: rem(20);
+	top: rem(20);
+	svg{
+		path{
+
+			fill:#000 !important;	
+		}
+	}
+}

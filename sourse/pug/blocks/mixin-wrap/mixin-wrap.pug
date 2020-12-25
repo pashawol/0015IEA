@@ -20,3 +20,85 @@ mixin ie11()
 	//- modernizer and for ie11
 	 
 	<!--[if lt IE 11]><p   class="browsehappy container">К сожалению, вы используете устаревший браузер. Пожалуйста, <a href="http://browsehappy.com/" target="_blank">обновите ваш браузер</a>, чтобы улучшить производительность, качество отображаемого материала и повысить безопасность.</p><![endif]-->
+
+mixin page-title(title, ar)
+	+b.page-title
+		.container
+			.row
+				if ar
+					.col-auto
+						+e.link(href="#") 
+							+icon("arrow-back")
+				.col
+					if title
+						h1= title
+				block
+			
+mixin reg(b="Зарегистрироваться")
+	+b.form-wrap(class="form-wrap--border    "   )
+			form(action='/file-upload'  enctype="multipart/form-data")
+				//- .dropzone(action='/file-upload'  enctype="multipart/form-data")
+				.row
+					
+					.col-lg-4
+						+input("Участник",'select','Статус')
+					.col-lg-4
+						+input("Город",'text','Город')(required)
+					.w-100
+					.col-lg-4
+						+input("Фамилия",'text','Фамилия')(required)
+					.col-lg-4
+						+input("Имя",'text','Имя')(required)
+					.col-lg-4
+						+input("Отчество",'text','Отчество')(required)
+					.col-lg-4
+						+input("Выберите",'select','Отрасль')
+					.col-lg-4
+						+input("Компания",'text','Компания')(required)
+					.col-lg-4
+						+input("Должность",'text','Должность')(required)
+
+					
+					.col-lg-12
+						label.dropzone-wrapper.d-block
+							+b.dropzone(action='/file-upload')
+								#dropzone
+									+e.prev-wrap
+										+icon('user-drop')
+										span.text-white Выбрать фото
+										
+									.fallback
+										input(name='file', type='file', multiple='')
+							//- +e.file Выбрать фото
+					.col-lg-4.my-4
+						button.btn.btn-primary.btn-arrows.w-100(type="submit")= b
+						.mt-2.smallest.fw-300 Нажимая на кнопку я соглашаюсь  #[br] с #[a(href="#").tdu пользовательским соглашением]
+
+					//- 	br
+					//- 	+in-c()
+					//- 		+e.SPAN.text Согласен на обработку #[a(href="#") персональных данных]
+mixin login(b="Зарегистрироваться")
+	+b.form-wrap(class="form-wrap--border")
+		.container 
+			form(action='/file-upload'  enctype="multipart/form-data")
+				//- .dropzone(action='/file-upload'  enctype="multipart/form-data")
+				.col-xxl-6.col-lg-8.g-0
+					+input("Логин",'email',' E-mail') 
+					+input("Пароль",'password','Пароль') 
+						//- .col-lg-6.mb-4
+					+e.btn.w-100.ttu.mb-3(type="submit") Войти
+					.h5.py-4 Нет аккаунта? 
+						| 
+						a(href="#") Зарегистрироваться
+					.h5.pb-2
+						a(href="#") Восстановить пароль
+
+	 
+mixin password(b="Зарегистрироваться")
+	+b.form-wrap(class="form-wrap--border")
+		.container 
+			form(action='/file-upload'  enctype="multipart/form-data")
+				//- .dropzone(action='/file-upload'  enctype="multipart/form-data")
+				.col-lg-6.g-0
+					+input("",'email','E-mail') 
+					+e.btn.w-100.ttu(type="submit") Восстановить

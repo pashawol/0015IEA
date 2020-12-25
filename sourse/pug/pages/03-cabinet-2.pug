@@ -1,0 +1,39 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug 
+include ../blocks/sCabinet/_sCabinet.pug 
+include ../blocks/sEvents/_sEvents.pug
+include ../blocks/sPeoples/_sPeoples.pug
+
+block variables
+	- let  mainPage= 'body-page'
+block title
+	- let  title= 'Личный кабинет'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	+b.page-title
+		.container
+			.row.align-items-center
+				.col-auto
+					h1= title 
+				.col
+					+e.label(style="background: #FF7E55;") Экспонент
+				.col-auto.mb-2
+					a(href="#").small.strong Выйти
+	+sCabinet
+		+sPeoples
+	//- +headerBlock()
+	//- +sProgram
+	//- .bg-grad
+	//- 	+sPerson
+	//- 	+sNetworking 
+	//- +sContact()
+	+footer()
+
+
+	

@@ -1,12 +1,21 @@
 .form-wrap{
+	&__title{
+		margin-bottom: rem(5);
+		display: block;
+		font-size: 12px;
+	}
+	select{
+	 
+	}
  	&__input-wrap{
 			// @extend .form-group;
+			margin-bottom: 1rem;
 			
 		}
 		&__input{
 			// @extend .form-control;
 		//  outline: 0 !important;
-		 resize: none;
+		//  resize: none;
  	}
  	&__btn{
  		cursor: pointer;
@@ -14,7 +23,10 @@
  	label{
  		width: 100%;
  		display: block;
- 	}
+	 }
+	 textarea{
+		 height: rem(150);
+	 }
 }
 
 
@@ -140,22 +152,17 @@
 
 
 
-// select.form-control {
-// 	background-image: url(../img/svg/chevron-up.svg);
-// 	background-repeat: no-repeat;
-// 	background-position: calc(100%  - 20px) 50%; // background-size: rem(18) ;
-// 	padding-right: rem(43px);
-// 	appearance: none !important;
+select {
+	background-image: url(../img/svg/triangle.svg);
+	background-repeat: no-repeat;
+	background-position: calc(100%  - 20px) 50%; // background-size: rem(18) ;
+	padding-right: rem(43px);
+	appearance: none !important; 
+}
+option{
+	color: #000 !important;
 
-// 	&:not([size]):not([multiple]) {
-// 		height: $input-height;
-// 	}
-
-// 	&:focus::-ms-value {
-
-// 	}
-// }
-
+}
 
 input[type='number'] {
 	-moz-appearance: textfield;

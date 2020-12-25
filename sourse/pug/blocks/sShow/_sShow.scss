@@ -13,6 +13,7 @@
 	// start .sShow
 	.sShow {
 		&__banner{
+		
 				@include media-breakpoint-up(md) {
 
 					max-width: 84%; 
@@ -75,24 +76,23 @@
 
 		// margin-top: em(-190px);
 
-		&__inner {
-			// padding-top: em(79);
+		&__inner { 
 			min-width: em(1600);
 			position: relative;
 			overflow: hidden;
 			height: em(960);
 			z-index: 5;
-				&::after {
-					content: '';
-					// z-index: -1;
-					position: absolute;
-					left: 0;
-					top: 0;
-					width: 100%;
-					height: rem(250);
-					background: linear-gradient(180deg, #CACDDB 0%, rgba(191, 198, 218, 0.71) 46.35%, rgba(255, 255, 255, 0) 100%);
-					pointer-events: none;
-				}
+				// &::after {
+				// 	content: '';
+				// 	// z-index: -1;
+				// 	position: absolute;
+				// 	left: 0;
+				// 	top: 0;
+				// 	width: 100%;
+				// 	height: rem(250);
+				// 	background: linear-gradient(180deg, #CACDDB 0%, rgba(191, 198, 218, 0.71) 46.35%, rgba(255, 255, 255, 0) 100%);
+				// 	pointer-events: none;
+				// }
 		}
 	
 	@include media-breakpoint-up(xl) {}
@@ -113,7 +113,7 @@
 	position: relative;
 	margin-left: auto;
 	margin-right: auto;
-	z-index: 20;
+	z-index: 20; 
 
 	&__logo-block {
 		// position: relative;

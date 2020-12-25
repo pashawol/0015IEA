@@ -1,0 +1,38 @@
+mixin sStands(data)
+	// start sStands
+	+b.sStands.section.pt-0#sStands&attributes(attributes)
+		.row.pb-3
+			.col.h5.strong 
+				strong
+					span.text-primary 25 стендов 
+					| 
+					| Вы посетили
+			.col-auto
+				+b.btn-search.toggle-search
+					+icon("search")
+			.col-12
+				+b.FORM.search-block--hidden.py-2.me-0
+					+input("Поиск")
+					+e.btn(type="button")
+						+icon("search")
+
+		+e.wrap.custom-scroll
+			- for (var x = 0; x < 10; x++)
+				+e.item
+					.strong.pb-2 AVAYA
+					.row
+						.col-sm-auto
+							+e.img-wrap.mb-3
+								img(src="img/@2x/logo.png", alt="")
+						.col
+							div.mb-2
+								.strong Сайт 
+								a.text-white.fw-300(href="http://www.madin.ru") http://www.madin.ru
+							div.mb-2
+								.strong E-mail
+								a.text-white.fw-300(href="mailto:m@madin.ru") m@madin.ru
+							div.mb-2
+								.strong Телефон 
+								a.text-white.fw-300(href="tel:+79856685588") +7 985 668 55 88
+						 
+	// end sStands

@@ -1,19 +1,17 @@
 // мобильное меню
 
 // мобильное меню
-$h: em(2);
+$h: em(1);
 
 .toggle-menu-mobile {
 	display: block;
-	height: $h* 12;
+	height: $h* 16;
 	position: relative;
 	color: $primary;
 	font-size: 32px;
+	padding-top: rem(12);
 
-	&.on {
-		color: #ffffff;
-	}
-
+ 
 	span:after,
 	span:before {
 		content: "";
@@ -28,14 +26,15 @@ $h: em(2);
 	span:before {
 
 
-		top: $h * 2;
+		top: $h * 5;
 	}
 
 	span:after {
-		bottom: $h * 2;
+		bottom: $h * 5;
 	}
 
-	span { 
+	span {
+		position: relative;
 		display: block;
 	}
 
@@ -55,6 +54,9 @@ $h: em(2);
 	// 	// opacity: 0;
 	// }
 
+	&.on {
+		pointer-events: none;
+	}
 	&.on span {
 		background-color: transparent;
 	}
@@ -80,7 +82,7 @@ $h: em(2);
 	position: fixed !important;
 	z-index: 999;
 	max-width: 85%;
-	height: calc(var(--vh, 1vh) * 100);
+	height: 101vh;
 	width: 280px;
 	top: 0;
 	// left: 0;
@@ -91,8 +93,7 @@ $h: em(2);
 
 	&__inner {
 		background-color: #c3c3c3;
-		padding: rem(20) 0;
-		overflow-x: hidden;
+		padding: 5% 0;
 		overflow-y: auto;
 		-webkit-overflow-scrolling: touch;
 		height: 100%;

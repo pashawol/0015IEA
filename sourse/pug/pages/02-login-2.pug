@@ -1,0 +1,56 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug
+include ../blocks/sContact/_sContact.pug
+//- include ../blocks/sProgram/_sProgram.pug
+//- include ../blocks/sPerson/_sPerson.pug
+//- include ../blocks/sNetworking/_sNetworking.pug
+
+block variables
+	- let  mainPage= 'body-page'
+block title
+	- let  title= 'Войти'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	+b.page-title
+		.container
+			.row
+				.col-auto
+					+e.link(href="#") 
+						+icon("arrow-back")
+				.col
+					h1= title 
+	+b.sLogin
+		.container
+			.row
+				.col-lg
+					+form-wrap().form-wrap--login.pb-3
+						+input("Введите",'email','Логин')
+						+input("Введите",'password','Пароль')
+						+e.btn-wrap.pt-2
+							.row.align-items-center.pb-5
+								.col-md-7
+									button.btn.w-100.btn-primary(type="submit") Войти  
+						.row
+							.col-auto.mb-3
+								a.strong.tdu(href="#") Забыли пароль?
+							.col-auto.mb-3
+								a.strong.tdu(href="#") Регистрация
+				+e.right-col.col-xl-auto
+					p 26 лет назад наша компания была создана командой людей, хорошо знакомых с ИТ-каналом и понимавших, каким должен быть хороший дистрибьютор. Эти знания, преданность идеям крепкого партнерства и желание развивать рынок помогли нам вырасти и стать теми, кто мы есть сегодня.
+
+					p В нашем портфеле почти 500 продуктовых линеек – от инфраструктур в коробке до наушников и детских конструкторов. В команде почти 2500 специалистов – от тех, кто знает слово «конвергентный», до тех, кто покажет как управлять гироскутером. У нас 27 городов присутствия в России, и если менеджер в одном офисе спит, то в другом скорее всего уже работает. Наш партнерский канал насчитывает почти 7500 
+	//- +headerBlock()
+	//- +sProgram
+	//- .bg-grad
+	//- 	+sPerson
+	//- 	+sNetworking 
+	//- +sContact()
+	+footer()
+
+
+	

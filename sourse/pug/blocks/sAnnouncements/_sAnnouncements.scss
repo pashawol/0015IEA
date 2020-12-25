@@ -1,0 +1,35 @@
+
+	// start .sAnnouncements
+	.sAnnouncements {
+		&__item{
+			border: 1px solid #55A4FF;
+			box-sizing: border-box;
+			/* 3 */
+
+			box-shadow: 0px 53.6471px 67px -11.6235px rgba(0, 0, 0, 0.21);
+			border-radius: 20px;
+			max-width: rem(600);
+			margin-bottom: rem(20);
+			padding: rem(16) rem(24);
+			p{
+				color: #97A8B9;
+				margin-bottom: 1rem;
+				font-size: $small;
+			}
+		}
+		&__date{
+			letter-spacing: 0.26em;
+			font-size: rem(12);
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sAnnouncements
