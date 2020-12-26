@@ -129,8 +129,7 @@ var JSCCommon = {
 				passive: true
 			});
 			window.addEventListener('resize', function () {
-				if (window.matchMedia("(min-width: 992px)").matches) {
-					JSCCommon.closeMenu();
+				if (window.matchMedia("(min-width: 992px)").matches) {// JSCCommon.closeMenu();
 				}
 			}, {
 				passive: true
@@ -175,6 +174,10 @@ function eventHandler() {
 	});
 	$(".toggle-search").click(function () {
 		$(".search-block--hidden").toggle();
+	});
+	$(".chat-modal__toggle--js , .chat-modal__close--js, .chat-modal__toggle-bg--js").click(function () {
+		$("body, html").toggleClass('fixed');
+		$(".chat-modal--js").toggleClass('active');
 	});
 }
 

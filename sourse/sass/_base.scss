@@ -407,7 +407,8 @@ iframe {
 }
 
 .body-page {
-	background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.68) 0%, rgba(0, 0, 0, 0.71) 0.01%, rgba(0, 0, 0, 0) 100%);
+	background-image: linear-gradient(121.1deg, #35373C 0.59%, #154396 119.86%);
+
 	background-color: #3466a0;
 	
 }
@@ -450,5 +451,121 @@ iframe {
 
 	&::-webkit-scrollbar-button {
 		display: none
+	}
+}
+
+.chat-modal{
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	// position:fixed;
+	width: rem(50);
+	height: rem(50);
+	z-index: 1200;
+	// @include mt;
+	&.active{
+		@include media-breakpoint-up(lg){
+
+			padding-bottom: rem(100);
+			padding-right: rem(40);
+		}
+		padding-right: rem(20);
+		padding-bottom: rem(20);
+		right: 0;
+		bottom: 0;
+		// width: 100%;
+		// height: 100%;
+		display: flex;
+		padding-top: rem(20); 
+		position: fixed;
+		overflow-y: auto;
+		overflow-x: hidden;
+		width: 100%;
+		height: 100%; 
+	}
+	&__toggle-bg{
+		background-color: rgba(0, 0, 0, 0.7);
+		position: absolute;
+		@include a-cent;
+		z-index: -1;
+		visibility: hidden;
+		opacity: 0;
+	}
+	&.active &__toggle-bg{
+		opacity: 1;
+		z-index: 1;
+		visibility: visible;
+	}
+	&__toggle{
+		z-index: 1200;
+		position: fixed;
+		right: rem(40);
+		bottom: rem(100);
+		background: linear-gradient(121.1deg, #35373C 0.59%, #154396 119.86%);
+		width: rem(50);
+		height: rem(50);
+		border-radius: 50%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include mt(.6);
+		.icon{ 
+			color: #ffffff;
+			font-size: rem(25);
+		} 
+	}
+	&.active &__toggle{
+			// opacity: 0;
+			transform: scale3d(0, 0, 0);
+	}
+	&.active &__block{
+			// opacity: 0;
+			transform: scale3d(1,1,1);
+			opacity: 1;
+	}
+	&.active{
+
+	}
+	&__count{
+		border-radius: 50%;
+		background: #F50000;
+		width: rem(10);
+		height: rem(10);
+		position: absolute;
+		right: rem(2);
+		top: rem(2);
+	}
+	&__block{
+		@include mt(.6);
+		opacity: 0;
+		transform: scale3d(0, 0, 0);
+		width: 100%;
+		max-width: rem(1000);
+		margin-left: auto;
+		margin-top: auto;
+		z-index: 1201;
+		position: relative;
+		transform-origin: calc(100% - 20px) calc(100% - 20px);
+		// padding-top: rem(20);
+		// margin-top: rem(20);
+	}
+	&__close{
+		position: absolute;
+		border-radius: 50%;
+		right: rem(-10);
+		top: rem(-10);
+		width: rem(25);
+		height: rem(25);
+		background-color: #ffffff;
+		z-index: 4;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		cursor: pointer;
+		.icon{
+			color: #000;
+			font-size: rem(10);
+			stroke: currentColor;
+		}
 	}
 }
