@@ -1,0 +1,70 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug  
+//- include ../blocks/sSpeakers/_sSpeakers.pug
+//- include ../blocks/sQuestions/_sQuestions.pug
+//- include ../blocks/sTrackPlan/_sTrackPlan.pug
+//- include ../blocks/sStream/_sStream.pug
+//- include ../blocks/sLogos/_sLogos.pug
+include ../blocks/sMembers/_sMembers.pug
+
+block variables
+	- let  mainPage=  'body-page'
+block title
+	- let  title= 'Контакты'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	//- +headerBlockPage()
+	+b.page-title
+		.container
+			h1= title  
+	//- +sSpeakers
+	.container 
+		.row 
+			.col.order-xxl-last
+				+sMembers10
+			.col-xxl-7
+				.contact-block.section.pt-0
+					.row
+						.col-sm-6.pb-4
+							div Телефон:
+							.strong
+								a.text-white(href="tel:8(800)302-27-04")  8 (800) 302-27-04 
+						.col-sm-6.pb-4
+							div Сотрудничество:
+							.strong
+								a.text-white(href="mailto:info@virtualcentr.com")  info@virtualcentr.com
+						.col-sm-6.pb-4
+							div Адрес:
+							.strong Москва, ул. Викторовского, 55 
+						.col-sm-6.pb-4
+							div Пресса:
+							.strong
+								a.text-white(href="mailto:press@virtualcentr.com")  press@virtualcentr.com
+					+form-wrap
+						.h5.strong.mb-4 #[span.text-primary Есть вопросы?] Задайте их нашим специалистам
+						.row
+							.col-6
+								+input('Введите ваше имя','text','Ваше имя')
+								+input('sample@sample.com','email','Ваш e-mail')
+							.col-6
+								+input('Введите вопрос','textarea','Ваш вопрос')
+							.col-12.pb-2
+							.col-auto 
+								butto.btn.btn-primary Отправить
+							.col.py-3.small  Нажимая на кнопку я соглашаюсь с #[a.tdu(href="#")  пользовательским соглашением]
+
+	//- +sLive()
+	//- +sSpeakers()
+	//- +sQuestions()
+	//- +sTrackPlan()
+	//- +sLogos
+	//- +sContact()
+	+footer()
+
+
+	

@@ -112,6 +112,8 @@ mixin sMembers7()
 			//- 	+item('12','Виктория Моршанская')
 			//- +pugin()
 	// end sMembers
+	
+
 mixin sMembers8()
 	// start sMembers
 	+b.sMembers.section.pt-0&attributes(attributes)
@@ -232,3 +234,31 @@ mixin sMembers9()
 			//- +pugin()
 	// end sMembers
 
+mixin sMembers10()
+	// start sMembers
+	+b.sMembers.pb-0&attributes(attributes) 
+			.row
+				mixin item(i,t)
+					.col-lg-4.col-sm-6
+						+e.item--hovered
+							+e.img-wrap.bg-wrap
+								+pic(`teamPers-${i}.jpg`,'bg',0)(class="picture-bg")
+								//- +e.DIV.img-inner
+								//- 	+e.DIV.btn(href="#").text-white
+								//- 		+e.DIV.icon-wrap
+								//- 			+icon("comment")
+								//- 		+e.DIV.btn-text.text-white Написать <br> сообщение 
+								//- 	+e.DIV.btn-text
+								//- 		a(href="#").text-white Открыть биографию
+							+e.caption
+								div
+									+e.DIV.title
+										a(href="#")= t
+									+e.DIV.text--md Управляющий партнер  
+									a(href="mailto:sample@sample.com") sample@sample.com
+					// /.col-xl-3.col-lg-4.col-sm-6
+				- for (var x = 0; x < 1; x++)
+					+item('1','Виктория Моршанская')
+					+item('2','Виктор Моршанский')
+					+item('5','Виктория Моршанская') 
+	// end sMembers

@@ -9,3 +9,4 @@
 7. <https://pashawol.github.io/0015IEA/public/04-members.html>
 8. <https://pashawol.github.io/0015IEA/public/05-member.html>
 9. <https://pashawol.github.io/0015IEA/public/07-content.html>
+10. <https://pashawol.github.io/0015IEA/public/08-contact.html>

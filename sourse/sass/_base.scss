@@ -70,15 +70,15 @@ body {
 		}
 	}
 }
-// .main-wrapper { 
-// 	// overflow-x: hidden;
-// 	// overflow: scroll;
-// 	// width: 100%; 
-// 	  height: 100vh;
-// 		height: calc(var(--vh, 1vh) * 100);
+.main-wrapper { 
+	overflow-x: hidden;
+	overflow: scroll;
+	width: 100%; 
+	  min-height: 100vh;
+		min-height: calc(var(--vh, 1vh) * 100);
 	 
 	 
-// }
+}
  
 
  
@@ -574,5 +574,14 @@ iframe {
 	@extend .text-white;
 	.icon{
 		font-size: rem(18);
+	}
+}
+
+.contact-block{
+	max-width: rem(736);
+	.form-wrap{
+		background: linear-gradient(121.1deg, #35373C 0.59%, #154396 119.86%);
+		border-radius: 20px;
+		padding: rem(35) rem(24);
 	}
 }
