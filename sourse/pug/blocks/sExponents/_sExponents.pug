@@ -1,0 +1,31 @@
+mixin sExponents(data)
+	// start sExponents
+	+b.sExponents.section#sExponents&attributes(attributes)
+		.container 
+			.row
+				.col-xxl-3.col-xl-4.pb-5
+					.h5.strong.mb-4 Фильтровать
+					+form-wrap 
+						+input("Россия",'select','Страна')
+						+input("Выберите",'select','Тип экспонента')
+						+input("Выберите",'select','Отрасль')
+						button.btn.btn-primary.w-100.py-3 Показать
+				.col
+					.row 
+						mixin item(i)
+							+e.col.col-lg-4.col-sm-6 
+								+e.img-wrap 
+									+pic(`logo-${i}.png`,'',0)
+								.h6 Liberty Wind
+								p Leroy Merlin — французская компания, владелец торговых сете
+						+item('1')
+						+item('2')
+						+item('3')
+						+item('4')
+						+item('5')
+						+item('6')
+						+item('7')
+						+item('8')
+						+item('9')
+					+pugin()
+	// end sExponents

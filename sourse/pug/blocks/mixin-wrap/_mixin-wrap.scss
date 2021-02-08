@@ -1,22 +1,30 @@
  
 	  
 .soc{
-	margin: 0 rem(-5px);
+	margin: 0 rem(-19px);
 	display: flex;
 	&__item{
 		text-decoration: none !important;
-		margin: 0 rem(5px);
+		margin: 0 rem(19px);
 		vertical-align: middle;
 		@include mt;
 		display: block;
+		width: rem(24);
+		height: rem(24);
+		@extend .btn;
+		@extend .btn-white;
+		padding: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		color: #224582;
 		&:hover{
-		 	// box-shadow: 0 0 33px 0px rgba(255, 83, 0, 0.16);
-			opacity: .6 ;
+		 
 		}
 		
 	}
 	.icon{
-	font-size: rem(30);
+	font-size: rem(16);
 	}
 	 
 
@@ -382,6 +390,21 @@
 
 		@include media-breakpoint-down(lg) {
 			display: none;
+		}
+	}
+}
+
+.page-title{
+	.search-block{
+		@include media-breakpoint-up(md){
+
+			width: rem(475);
+		}
+
+		input{
+			background-color: transparent;
+			border-color: $primary;
+			border-radius: rem(20px);
 		}
 	}
 }

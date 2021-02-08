@@ -1,0 +1,44 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug  
+//- include ../blocks/sSpeakers/_sSpeakers.pug
+//- include ../blocks/sQuestions/_sQuestions.pug
+//- include ../blocks/sTrackPlan/_sTrackPlan.pug
+//- include ../blocks/sStream/_sStream.pug
+//- include ../blocks/sLogos/_sLogos.pug
+include ../blocks/sMembers/_sMembers.pug
+include ../blocks/sExponents/_sExponents.pug
+
+block variables
+	- let  mainPage=  'body-page'
+block title
+	- let  title= 'О проекте'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	//- +headerBlockPage()
+	+b.page-title
+		.container
+			.row.align-items-center
+				.col
+					h1= title  
+				.col-lg-auto.mb-2
+					+b.search-block
+						+input('Поиск по экспонентам')
+						+e.btn(type="submit")
+							+icon('search')
+	//- +sSpeakers 
+	+sContent
+	//- +sLive()
+	//- +sSpeakers()
+	//- +sQuestions()
+	//- +sTrackPlan()
+	//- +sLogos
+	//- +sContact()
+	+footer()
+
+
+	

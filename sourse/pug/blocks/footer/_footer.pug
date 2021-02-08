@@ -1,11 +1,13 @@
 mixin footer()
 	+b.FOOTER.footer.block-with-lazy
 		.container
-			.row.smallest
+			.row.smallest.align-items-center
 				.col-auto.strong.pb-1.small © 2020
 				.col.pb-1
 					a(href="#") Пользовательское соглашение
 				.col-auto.pb-1
 					span.fw-300 Технологии:  
 					a.tdu.strong.text-white(href="#") Ruvents
+				.col-auto.pb-1
+					+soc
 

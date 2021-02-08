@@ -1,0 +1,39 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug  
+//- include ../blocks/sSpeakers/_sSpeakers.pug
+//- include ../blocks/sQuestions/_sQuestions.pug
+//- include ../blocks/sTrackPlan/_sTrackPlan.pug
+//- include ../blocks/sStream/_sStream.pug
+//- include ../blocks/sLogos/_sLogos.pug
+include ../blocks/sMembers/_sMembers.pug
+
+block variables
+	- let  mainPage=  'body-page'
+block title
+	- let  title= 'Участнкии'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	//- +headerBlockPage()
+	+b.page-title
+		.container
+			.row.align-items-center
+				.col-auto
+					a.link-back(href="#") 
+						+icon("arrow-back")
+	//- +sSpeakers 
+	+sMembers9
+	//- +sLive()
+	//- +sSpeakers()
+	//- +sQuestions()
+	//- +sTrackPlan()
+	//- +sLogos
+	//- +sContact()
+	+footer()
+
+
+	

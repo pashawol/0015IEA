@@ -1,0 +1,30 @@
+
+	// start .sExponents
+	.sExponents {
+		&__col{
+			margin-bottom: rem(40);
+		}
+		&__img-wrap{
+			@include block();
+			position: relative;
+			background-color: #fff;
+			margin-bottom: rem(25);
+			border-radius: 20px;
+			img{
+				@include a-cent1;
+				max-width: 80%;
+				max-height: 80%;
+			}
+		}
+		 
+	@include media-breakpoint-up(xl) {}
+	@include media-breakpoint-up(lg) {}
+	@include media-breakpoint-up(md) {}
+	@include media-breakpoint-up(sm) {}
+	//
+	@include media-breakpoint-between(md, xl) { }
+	//
+	@include media-breakpoint-only(xl) {}
+	//
+	@include media-breakpoint-down(xl) {}
+} // end.sExponents

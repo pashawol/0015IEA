@@ -569,3 +569,10 @@ iframe {
 		}
 	}
 }
+
+.link-back{
+	@extend .text-white;
+	.icon{
+		font-size: rem(18);
+	}
+}

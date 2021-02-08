@@ -80,6 +80,7 @@ $theme-colors: ("primary": $primary,
   "warning": $warning,
   "danger": $danger,
   "light": $light,
+  "white": $white,
   "dark": $dark) !default;
 // scss-docs-end theme-colors-map
 
@@ -334,7 +335,7 @@ $gutters: $spacers !default;
 $border-width: 1px !default;
 $border-color: $gray-300 !default;
 
-$border-radius: rem(24) !default;
+$border-radius: rem(20) !default;
 $border-radius-sm: rem(24) !default;
 $border-radius-lg: .3rem !default;
 
@@ -615,7 +616,7 @@ $form-label-font-style: null !default;
 $form-label-font-weight: null !default;
 $form-label-color: null !default;
 
-$input-padding-y: $input-btn-padding-y !default;
+$input-padding-y: rem(18) !default;
 $input-padding-x: $input-btn-padding-x !default;
 $input-font-family: $input-btn-font-family !default;
 $input-font-size: $input-btn-font-size !default;
@@ -639,7 +640,7 @@ $input-border-color: $primary !default;
 $input-border-width: $input-btn-border-width !default;
 $input-box-shadow: $box-shadow-inset !default;
 
-$input-border-radius: $border-radius !default;
+$input-border-radius: rem(24) !default;
 $input-border-radius-sm: $border-radius-sm !default;
 $input-border-radius-lg: $border-radius-lg !default;
 
@@ -956,7 +957,7 @@ $pagination-padding-x-lg: 1.5rem !default;
 $pagination-color: $link-color !default;
 $pagination-bg: $white !default;
 $pagination-border-width: $border-width !default;
-$pagination-border-radius: $border-radius !default;
+$pagination-border-radius: 50% !default;
 $pagination-margin-left: -$pagination-border-width !default;
 $pagination-border-color: $gray-300 !default;
 
