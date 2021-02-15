@@ -184,6 +184,19 @@ function eventHandler() {
 		$(".chat-modal--js").toggleClass('active');
 	})
 
+
+	let dragAmb = document.querySelector('.js-drag');
+	if (dragAmb) {
+		const slider5 = new ScrollBooster({
+			viewport: dragAmb,
+			content: document.querySelector('.js-drag-content'),
+			scrollMode: 'transform',
+			direction: 'horizontal',
+			// onClick: true
+		});
+	}
+
+
 };
 if (document.readyState !== 'loading') {
 	eventHandler();

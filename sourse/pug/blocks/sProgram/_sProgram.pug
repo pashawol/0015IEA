@@ -1,0 +1,115 @@
+mixin sProgram(data)
+	// start sProgram
+	+b.SECTION.sProgram.section.pt-0&attributes(attributes)
+		.container 
+			+e.head
+				.row
+					.col-lg-auto
+						+b.LABEL.radio-block
+							input(type="checkbox" name="date")
+							+e.btn 14 февраля
+							+e.btn 15 февраля
+					.col-lg-auto
+						.d-sm-none.strong.mb-1 Программа
+						+b.LABEL.radio-block
+							input(type="checkbox" name="prog")
+							+e.btn Основная 
+								.d-none.d-sm-inline программа
+							+e.btn Дополнительная 
+								.d-none.d-sm-inline программа
+		+e.body
+			.container 
+				.row 
+					+b.time-line.col-auto
+						+e.item 10:00
+						+e.item 11:00
+						+e.item 12:00
+						+e.item 13:00 
+							
+						+e.item 10:00
+						+e.item 11:00
+						+e.item 12:00
+
+					.col.px-0
+						+e.items
+
+							+b.slider-days.drag.js-drag
+								.js-drag-content
+									+e.head
+										.row.mx-0.g-3
+											mixin sl(t)
+												+e.slide--title.col-auto= t
+											+sl('Global Track')
+											+sl('Industry Track')
+											+sl('Keynote Track')
+											+sl('Global Track')
+											+sl('Industry Track')
+											+sl('Industry Track')
+									+e.group.row.mx-0.g-3
+										+e.slide.col-auto
+											+slide()
+											+slide()
+										+e.slide.col-auto
+											+slide()
+										+e.slide.col-auto
+											+slide()
+										+e.slide.col-auto
+											+slide()
+											+slide()
+											+slide()
+											+slide() 
+										+e.slide.col-auto
+											+slide()
+										+e.slide.col-auto
+											+slide()
+									+e.break-line
+										.row
+											.col-auto.text-primary 10:00 - 11:20
+											.col-auto Перерыв
+									+e.group.row.mx-0.g-3
+										+e.slide.col-auto 
+										+e.slide.col-auto 
+										+e.slide.col-auto
+											+slide()
+										+e.slide.col-auto
+											+slide()
+										+e.slide.col-auto
+											+slide()
+										+e.slide.col-auto
+											+slide()
+					
+	// end sProgram
+mixin slide()
+	
+	+b.schedule-item
+		+e.head.row 
+			.col.strong 10:00 - 11:20
+				span.ms-2: +icon("video-camera")
+			.col-auto
+				+icon('star','active')
+		.text-secondary.small.pb-2 Зал2
+		.small Спортивные состязания без лайв съмки
+		+b.schedule-item--hover
+			+e.head.row 
+				.col.strong 10:00 - 11:20
+					span.ms-2: +icon("video-camera")
+				.col-auto
+					+icon('star','active')
+			.text-secondary.small.pb-2 Зал2
+			.small.mb-3 Формирование программ развития цифровой экономики в регионах является одним из приоритетных направлений российской государственной политики. Системное развитие и внедрение цифровых арственной политики. Системное развитие и внедрение цифровых Формирование программ развития цифровой экономики в регионах является
+			+e.item
+				+e.img-wrap 
+					img(src="img/@2x/avatar.png", alt="")
+				div 
+					.small.text-primary Валидаров Константин
+					.small.text-secondary Mail.ru group
+
+			+e.item
+				+e.img-wrap 
+					img(src="img/@2x/avatar.png", alt="")
+				div 
+					.small.text-primary Валидаров Константин
+					.small.text-secondary Mail.ru group
+			.pt-2.strong 
+				a(href="#") Подробнее... 
+

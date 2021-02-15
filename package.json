@@ -9,16 +9,16 @@
   "author": "Khalunin Pavel",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "^7.12.10",
-    "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-    "@babel/preset-env": "^7.12.11",
+    "@babel/core": "^7.12.16",
+    "@babel/plugin-proposal-object-rest-spread": "^7.12.13",
+    "@babel/preset-env": "^7.12.16",
     "animate.css": "^4.1.1",
     "autoprefixer": "^9.8.6",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-polyfill": "^6.26.0",
-    "bootstrap": "^5.0.0-beta1",
-    "browser-sync": "^2.26.12",
-    "browserslist": "^4.16.0",
+    "bootstrap": "^5.0.0-beta2",
+    "browser-sync": "^2.26.14",
+    "browserslist": "^4.16.3",
     "colors": "^1.4.0",
     "cssnano": "^4.1.10",
     "del": "^5.1.0",
@@ -61,6 +61,7 @@
     "inputmask": "^5.0.5",
     "jquery": "^3.5.1",
     "loading-attribute-polyfill": "^1.5.4",
+    "scrollbooster": "^3.0.2",
     "swiper": "^5.4.5"
   }
 }

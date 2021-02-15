@@ -179,6 +179,17 @@ function eventHandler() {
 		$("body, html").toggleClass('fixed');
 		$(".chat-modal--js").toggleClass('active');
 	});
+	var dragAmb = document.querySelector('.js-drag');
+
+	if (dragAmb) {
+		var slider5 = new ScrollBooster({
+			viewport: dragAmb,
+			content: document.querySelector('.js-drag-content'),
+			scrollMode: 'transform',
+			direction: 'horizontal' // onClick: true
+
+		});
+	}
 }
 
 ;

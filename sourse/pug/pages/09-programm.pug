@@ -1,0 +1,38 @@
+extends layout/main.pug
+
+
+include ../blocks/sContent/_sContent.pug  
+//- include ../blocks/sSpeakers/_sSpeakers.pug
+//- include ../blocks/sQuestions/_sQuestions.pug
+//- include ../blocks/sTrackPlan/_sTrackPlan.pug
+//- include ../blocks/sStream/_sStream.pug
+//- include ../blocks/sLogos/_sLogos.pug
+include ../blocks/sMembers/_sMembers.pug
+include ../blocks/sProgram/_sProgram.pug
+
+block variables
+	- let  mainPage=  'body-page body-program'
+block title
+	- let  title= 'Программа'
+	title= title
+block pagecontent
+	//- +mob-mnu()
+	+header()
+		+top-nav()
+	//- +headerBlockPage()
+	+b.page-title
+		.container
+			h1= title  
+	//- +sSpeakers
+	+sProgram
+
+	//- +sLive()
+	//- +sSpeakers()
+	//- +sQuestions()
+	//- +sTrackPlan()
+	//- +sLogos
+	//- +sContact()
+	+footer()
+
+
+	

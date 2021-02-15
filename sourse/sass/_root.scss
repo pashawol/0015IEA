@@ -24,6 +24,16 @@
 		--swiperBgDefHover: #ffffff;
 	
 	--dropzoneSize: 207px;
+
+	--z: -1;
+	--op: 0;
+	--vis: hidden;
+	--sc: 0;
+	@include media-breakpoint-up(xl) {
+
+		--timeW: #{rem(80)};
+	}
+	--timeW: #{rem(60)};
 }
 
 @include media-breakpoint-up(xl) {}
