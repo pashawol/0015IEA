@@ -128,7 +128,10 @@
 }
 
 .slider-days{
+	.js-drag-content{
+	}
 	&__group{
+	  
 		padding-bottom: var(--timeW);
 	}
 	&__break-line {
@@ -155,6 +158,9 @@
 			@include media-breakpoint-up(sm) {
 				
 				width: rem(373);
+				&--sp{
+					margin-right: rem(80);
+				}
 			}
 			width: rem(243);
 	}
@@ -170,7 +176,7 @@
 
 
 	&__head{
-		color: $primary;
+		color: $primary; 
 		.icon-video-camera{
 			font-size: rem(20);
 		}
