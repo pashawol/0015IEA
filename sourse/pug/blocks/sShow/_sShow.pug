@@ -41,16 +41,17 @@ mixin sShow2(data)
 	// start sShow
 	+b.sShow&attributes(attributes)
 		+e.head
-			.container-fluid
-				.row
-					.col-auto
-						+b.back(href="#")
-							+icon('arrow-back')
-					.col-auto.d-none.d-sm-block
-						img.logo-color(src="img/svg/logo-color.svg", alt="")
-					.col
-						+e.banner
-							+pic("banner.jpg",'',0)
+			block
+			//- .container-fluid
+			//- 	.row
+			//- 		.col-auto
+			//- 			+b.back(href="#")
+			//- 				+icon('arrow-back')
+			//- 		.col-auto.d-none.d-sm-block
+			//- 			img.logo-color(src="img/svg/logo-color.svg", alt="")
+			//- 		.col
+			//- 			+e.banner
+			//- 				+pic("banner.jpg",'',0)
 		+e.inner.bg-wrap
 			+pic('show-page.png','',0)(class="picture-bgg")
 			+b.canvas-block--page

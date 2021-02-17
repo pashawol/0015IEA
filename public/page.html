@@ -25,25 +25,73 @@
 		<link rel="stylesheet" href="css/main.min.css"/>
 	</head>
 	<body> 
+		<!-- start top-nav-->
+		<div class="top-nav">
+			<div class="container">
+				<div class="top-nav__row row">
+					<div class="col-auto d-xl-none">
+						<div class="toggle-menu-mobile toggle-menu-mobile--js"><span></span>
+						</div>
+					</div>
+					<div class="col-xl-auto col"><a class="top-nav__logo" href="/"><img src="img/svg/logo-top.svg" alt=""/></a>
+					</div>
+					<div class="col-auto"><a class="top-nav__btn" href="#">
+						<svg class="icon icon-search ">
+							<use xlink:href="img/svg/sprite.svg#search"></use>
+						</svg></a>
+					</div>
+					<div class="top-nav__col col-xl order-xl-0 order-last">
+						<div class="nav-wrap">
+							<ul class="navMenu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#sContact" itemprop="url">Выставка</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Программа</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Участники</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">О проекте</a>
+								</li>
+								<li class="navMenu__item" itemprop="item"><a class="navMenu__link" href="#" itemprop="url">Контакты</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-auto"> 
+						<div class="row g-3">
+							<div class="col-auto">
+								<button class="btn btn-sm btn-outline-primary">En</button>
+							</div>
+							<div class="col-auto d-none d-md-block">
+								<button class="btn btn-sm px-4 btn-outline-primary">Регистрация</button>
+							</div>
+							<div class="col-auto"><a class="top-nav__btn text-primary" href="#">
+								<svg class="icon icon-user ">
+									<use xlink:href="img/svg/sprite.svg#user"></use>
+								</svg></a>
+							</div>
+							<div class="col-auto"><a class="top-nav__btn text-primary" href="#"><span class="top-nav__count">10</span>
+								<svg class="icon icon-notification ">
+									<use xlink:href="img/svg/sprite.svg#notification"></use>
+								</svg></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end top-nav-->
 		<!-- start sShow-->
 		<div class="sShow">
 			<div class="sShow__head">
-				<div class="container-fluid">
-					<div class="row">
-						<div class="col-auto"><a class="back" href="#">
-							<svg class="icon icon-arrow-back ">
-								<use xlink:href="img/svg/sprite.svg#arrow-back"></use>
-							</svg></a>
-						</div>
-						<div class="col-auto d-none d-sm-block"><img class="logo-color" src="img/svg/logo-color.svg" alt=""/></div>
-						<div class="col">
-							<div class="sShow__banner">
-								<!-- picture-->
-								<picture> 
-									<source srcset="img/@2x/webp/banner.webp" type="image/webp"/><img src="img/@2x/banner.jpg" alt=""/>
-								</picture>
-								<!-- /picture-->
-							</div>
+				<div class="page-title">
+					<div class="container">
+						<div class="row align-items-center">
+							<div class="col-auto"><a class="link-back" href="#"> 
+									<svg class="icon icon-arrow-back ">
+										<use xlink:href="img/svg/sprite.svg#arrow-back"></use>
+									</svg></a></div>
+							<div class="col"></div>
+							<div class="col-auto pb-2"><a class="btn btn-primary px-5" href="#">Оставить визитку </a></div>
 						</div>
 					</div>
 				</div>

@@ -19,7 +19,19 @@ block pagecontent
 	//- +headerBlock()
 	//- +sForm()
 	//- +sContact()
+	+top-nav()
+
+						
 	+sShow2
+		+b.page-title
+			.container
+				.row.align-items-center
+					.col-auto
+						a.link-back(href="#") 
+							+icon("arrow-back")
+					.col
+					.col-auto.pb-2
+						a.btn.btn-primary.px-5(href="#") Оставить визитку 
 	//- +footer()
 
 
